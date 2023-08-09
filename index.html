@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>deOroVerde</title>
     <style>
 
         body{
@@ -13,94 +13,100 @@
         header{
             background-color: rgb(186, 226, 107);
             display: flex;
-            align-items: center;
-            height: 5%;
-            padding: 0;
         }
         #logohead{
-            width: 40%;
+            display: flex;
+            width: 25%;
         }
-        #desplegable{
-            width: 90%;
+        #divnav{
+            background-color: aquamarine;
+            margin: 0;
+            padding: 0;
+            width: 80%;
         }
-        
         nav ul{
             list-style: none;
             display: flex;
-            
+            align-items: center;
+            background-color: blueviolet;
+            padding: 0;
         }
         nav ul li{
             font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
-            padding: 5%;
+            padding: 3%;
+            margin: 0%;
+            text-decoration: none;
+            transition: 0.2s;
+            background-color: blanchedalmond;
+        }
+        nav ul li:hover{
+            transform: scale(1.1);
+        }
+        nav ul li a{
+            text-decoration: none;
+            color:rgb(5, 41, 5);
+            font-size: 100%;
         }
         #arbol{
             background-image: url(images/plant1nest.jpg);
             background-repeat: no-repeat;
             background-size: 100%;
         }
-        #bienvenidos{
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            margin-left: 5%;
-            color: rgb(65, 85, 22);
-            width: 40%;
-            font-weight: bold;
-            font-size: 50px;
-        }
-        #part1{
-            display: flex;
-            padding-top: 0%;
-        }
-        #p1{
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            margin-left: 5%;
-            color: rgb(65, 85, 22);
-            background-color: blanchedalmond;
-            width: 60%;
-        }
         #imgcatalogo{
-            margin-left: 40%;
-            margin-top: 20%;
+            margin-left: 65%;
+            margin-top: 35%;
+            width: 35%;
         }
-       
+        #imgpedido{
+            margin-left: 45%;
+            margin-top: 15%;
+            width: 35%;
+        }
+        #imggaleria{
+            margin-left: 30%;
+            margin-top: 20%;
+            width: 35%;
+        }
+        #imgvolver{
+            margin-left: 60%;
+            margin-top: 5%;
+            width: 35%;
+        }
+        #contacto{
+            background-color: rgb(186, 226, 107);
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+            color:rgb(5, 41, 5);
+
+        }
+
     </style>
 </head>
 <body>
     <header>
-        
-        <div>
-            <img id="logohead" src="images/logo.png" alt="deOroVerde">
+        <img id="logohead" src="images/logo.png" alt="deOroVerde">
+        <div id="divnav">
         <nav>
             <ul>
-                <li>Inicio</li>
-                <li>Catálogo</li>
-                <li>Realizar pedido</li>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Catálogo</a></li>
+                <li><a href="">Realizar pedido</a></li>
                 <!--hacer un apartado donde se pueda subir la imagen a imprimir y el tamaño del papel-->
-                <li>Galería</li>
-                <li>Contacto</li>
+                <li><a href="">Galería</a></li>
+                <li><a href="">Contacto</a></li>
                 
             </ul>
         </nav>
-        
-            
-            
         </div>
     </header>
     <section>
-        <div id="p1"></div>
-        <p id="bienvenidos">¡Bienvenidos!</p>
-        <p>Os presento el papel con semillas deOroVerde.</p>
-        <p>Sigue el árbol hasta la raíz para conocer nuestro trabajo.</p>
-        </div>
+       
     </section>
     <section id="arbol">
-       
         <a href="documentos_proyecto/Información deOroVerde.pdf"><img id="imgcatalogo" src="images/frame_catalogo.png" width="50%" alt="Inicio" ></a>
-        <a href="documentos_proyecto/Información deOroVerde.pdf"><img id="imgcatalogo" src="images/frame_catalogo.png" width="50%" alt="Inicio" ></a>
-        <a href="documentos_proyecto/Información deOroVerde.pdf"><img id="imgcatalogo" src="images/frame_catalogo.png" width="50%" alt="Inicio" ></a>
-        <a href="documentos_proyecto/Información deOroVerde.pdf"><img id="imgcatalogo" src="images/frame_catalogo.png" width="50%" alt="Inicio" ></a>
+        <a href="#"><img id="imgpedido" src="images/frame_realizar_pedido.png" width="50%" alt="Inicio" ></a>
+        <a href="#"><img id="imggaleria" src="images/frame_galeria.png" width="50%" alt="Inicio" ></a>
+        <a href="#"><img id="imgvolver" src="images/frame_volver_inicio.png" width="50%" alt="Inicio" ></a>
 
-        
-       
         <br>
         <br>
         <br>
@@ -108,7 +114,11 @@
         <br>
         <br>
     </section>
-    <footer></footer>
+    <footer id="contacto">
+        <h1>Contacto</h1>
+        <p>Aquí va el contacto y las RRSS</p>
+        <br>
+    </footer>
     
 </body>
 </html>
