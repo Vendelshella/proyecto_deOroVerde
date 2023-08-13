@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>deOroVerde</title>
-    <script src="menu.js"></script>
+    <script>
+        const nav = document.querySelector("#nav");
+        const abrir = document.querySelector("#abrirmenu");
+        const cerrar = document.querySelector("#cerrarmenu");
+
+        abrir.addEventListener("click", () => {
+            nav.classList.add("visible");
+        })
+        cerrar.addEventListener("click", () => {
+            nav.classList.remove("visible");
+        })
+    </script>
     <style>
 
         body{
@@ -19,8 +30,8 @@
         }
         #logohead{
             display: flex;
-            width: 17rem;
-            height: 8rem;
+            width: 16rem;
+            height: 6rem;
         }
         #abrirmenu, #cerrarmenu{
             display: none;
@@ -30,15 +41,19 @@
                 display: block;
                 margin-left: 25%;
             }
-            nav{
-                display: none;
-            }
-            nav{
+            .nav{
+                opacity: 0;
+                visibility: hidden;
                 position: absolute;
                 top: 5%;
                 right: 0;
                 background-color: rgb(186, 226, 107);
                 padding: 3%;
+            }
+
+            .nav.visible{
+                opacity: 1;
+                visibility: visible;
             }
             nav ul{
                 flex-direction: column;
@@ -121,7 +136,7 @@
         <img id="logohead" src="images/logo.png" alt="deOroVerde">
         <button id="abrirmenu">Abrir</button>
         <div id="divnav">
-        <nav id="nav">
+        <nav id="nav" class="nav">
             <button id="cerrarmenu">Cerrar</button>
             <ul>
                 <li><a href="#">Inicio</a></li>
