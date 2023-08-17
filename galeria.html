@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deOroVerde</title>
+    <style>
+        body{
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+            color:rgb(5, 41, 5);
+        }
+
+        /* NAVEGADOR */
+        header{
+            background-color: rgb(186, 226, 107);
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        #logohead{
+            display: flex;
+            width: 20%;
+            height: 5%;
+        }
+        .checkbox, .icons{
+            opacity: 0;
+            visibility: hidden;
+            width: 20px;
+        }
+        @media screen and (max-width: 650px){
+            #logohead{
+                width: 25%;
+                height: 10%;
+            }
+            .divnav{
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                left: 20%;
+                transition: 0.3s;
+            }
+            .checkbox{
+                opacity: 0;
+                visibility: visible;
+                margin-left: 90%;
+                position: absolute;
+                width: 5%;
+                cursor: pointer;
+            }
+            .icons{
+                opacity: 1;
+                visibility: visible;
+                margin-left: 90%;
+                position: absolute;
+                width: 5%;
+            }
+            .icons{
+                pointer-events: none;
+            }
+            .checkbox:checked ~ .divnav{
+                opacity: 1;
+                visibility: visible;
+            }
+            .icons.close{
+                display: none;
+            }
+            .checkbox:checked ~ .icons.open{
+                display: none;
+            }
+            .checkbox:checked ~ .icons.close{
+                display: block;
+            }
+            .nav{
+                margin-top: 4%;
+                position: absolute;
+                right: 0;
+                background-color: rgb(186, 226, 107);
+                padding: 0% 3%;
+            }
+            nav ul{
+                flex-direction: column;
+            }
+            nav ul li{
+                width: 100%;
+                font-size: 70%;
+                margin: 5% 0%;
+            }
+            nav ul li:hover{
+                background-color: rgb(147, 173, 98);
+            }
+            nav ul li a{
+                margin: 50% 0%;
+            }
+        }
+        #divnav{
+            margin: auto;
+            padding: 0;
+            width: 80%;
+        }
+        nav ul{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            justify-content: flex-end;
+        }
+        nav ul li{
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+            padding: 1% 2%;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        nav ul li:hover{
+            transform: scale(1.1);
+            background-color: rgb(147, 173, 98);
+        }
+        nav ul li a{
+            text-decoration: none;
+            color:rgb(5, 41, 5);
+            font-size: 110%;
+        }
+        /* FIN NAVEGADOR */
+        section{
+            text-align: center;
+        }
+        h1{
+            font-size: 200%;
+        }
+        
+        /* GALERIA */
+        .fotos{
+            border: solid 2px rgb(186, 226, 107);
+            background-color: rgb(244, 244, 211);
+            margin: 5%;
+            padding: 5% 0%;
+        }
+        
+        img{
+            width: 15%;
+            margin: 1%;
+        }
+        /*METER MEDIA QUERY*/
+        /*AGRANDAR FOTOS AL PINCHAR*/
+
+    </style>
+</head>
+<body>
+    <header>
+        <img id="logohead" src="images/logo.png" alt="deOroVerde">
+        <input type="checkbox" class="checkbox">
+        <img class="icons open" src="images/menu-hamb.png" alt="">
+        <img class="icons close" src="images/simbolo-x.png" alt="">
+        <div id="divnav" class="divnav">
+            <nav id="nav" class="nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="documentos_proyecto/Información deOroVerde.pdf">Catálogo</a></li>
+                    <li><a href="realizar_pedido.html">Realizar pedido</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section>
+        <h1>Galería</h1>
+        <h3>Papel, semillas y flores</h3>
+    </section>
+    <section class="fotos">
+        <div class="row">
+            <div class="column">
+                <img src="galeria_deOroVerde/1.jpg">
+                <img src="galeria_deOroVerde/3.jpg">
+                <img src="galeria_deOroVerde/4.jpg">
+                <img src="galeria_deOroVerde/2.jpg">
+                <img src="galeria_deOroVerde/5.jpg">
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <img src="galeria_deOroVerde/6.jpg">
+                <img src="galeria_deOroVerde/7.jpg">
+                <img src="galeria_deOroVerde/8.jpg">
+                <img src="galeria_deOroVerde/9.jpg">
+                <img src="galeria_deOroVerde/10.jpg">
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <img src="galeria_deOroVerde/11.jpg">
+                <img src="galeria_deOroVerde/12.jpg">
+                <img src="galeria_deOroVerde/13.jpg"> 
+                <img src="galeria_deOroVerde/14.jpg"> 
+                <img src="galeria_deOroVerde/15.jpg">
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <img src="galeria_deOroVerde/16.jpg">
+                <img src="galeria_deOroVerde/17.jpg">
+                <img src="galeria_deOroVerde/18.jpg">
+                <img src="galeria_deOroVerde/19.jpg">
+                <img src="galeria_deOroVerde/20.jpg">
+            </div>
+        </div>
+    </section>
+    <footer>
+
+    </footer>
+</body>
+</html>
