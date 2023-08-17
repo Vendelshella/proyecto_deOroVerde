@@ -124,6 +124,7 @@
         }
         /* FIN NAVEGADOR */
 
+        /* SECTION */
         h1{
             font-size: 200%;
         }
@@ -137,6 +138,7 @@
             justify-content: center;
             margin: 5%;
             border: solid 2px rgb(186, 226, 107);
+            background-color: rgb(225, 249, 178);
             padding: 5%;
         }
         th{
@@ -144,15 +146,66 @@
             font-size: 130%;
         }
         
+        /* input file*/
+        
+        #imagen_pedido{
+            display: block;
+            visibility: collapse;
+            font-size: 80%;
+            padding: 2%;
+            margin-bottom: 2%;
+        }
+        #imagen_pedido::before{
+            content: 'Elegir archivo';
+            background-color: white;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+            color: rgb(5, 41, 5);
+            padding: 2%;
+            margin-bottom: 2%;
+
+            opacity: 1;
+            visibility: visible;
+            cursor: pointer;
+            font-size: 110%;
+            box-shadow: 3px 3px 5px -1px rgb(5, 41, 5);
+        }
+        /* fin input file */
+        
+        #formato_tarjeta{
+            border: none;
+            padding: 2%;
+            color: rgb(5, 41, 5);
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+            box-shadow: 3px 3px 5px -1px rgb(5, 41, 5);
+            cursor: pointer;
+            margin-top: 2%;
+            margin-bottom: 5%;
+        }
+        .boton_enviar{
+            border: none;
+            border-radius: 0;
+            background-color: rgb(117, 138, 79);
+            padding: 2% 5%;
+            color: white;
+            margin: auto;
+            margin-top: 5%;
+        }
+        textarea, #nombre, #email{
+            border: none;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+            box-shadow: 3px 3px 5px -1px rgb(5, 41, 5);
+            margin-bottom: 5%;
+        }
+        
         @media screen and (max-width: 800px){
             .main{
-                font-size: 80%;
-                margin: 0;
+                font-size: 90%;
             }
             td{
                 display:flex;
             }
         }
+        /* FIN SECTION */
         </style>
 </head>
 <body>
@@ -164,7 +217,7 @@
         <div id="divnav" class="divnav">
             <nav id="nav" class="nav">
                 <ul>
-                    <li><a href="#">Inicio</a></li>
+                    <li><a href="index.html">Inicio</a></li>
                     <li><a href="documentos_proyecto/Información deOroVerde.pdf">Catálogo</a></li>
                     <li><a href="realizar_pedido.html">Realizar pedido</a></li>
                     <li><a href="">Galería</a></li>
@@ -182,23 +235,25 @@
         <form class="form1" action="pedido.php" method="post">
             <table class="table1">
                 <th colspan="2">Formulario para tarjetas con formato predefinido:</th>
-                <tr>
+                <tr class="subir_imagen">
                     <td><label>Subir imagen:</label></td>
-                    <td><input type="file" name="" id="imagenpedido"></td>
+                    <td class="boton_archivo"><input class="imagen_pedido" type="file" id="imagen_pedido"></td>
+                </tr>
+                <tr class="seleccion">
+                    <td><label for="formato_tarjeta">Formato tarjeta:</label></td>
+                    <td>
+                        <select name="formato_tarjeta" id="formato_tarjeta">
+                            <option value="visita">Tarjeta de visita</option>
+                            <option value="agradecimiento">Tarjeta de agradecimiento</option>
+                            <option value="etiqueta">Etiqueta con cuerda</option>
+                            <option value="soporte">Soporte pendientes</option>
+                            <option value="tamañoA5">Tamaño A5</option>
+                            <option value="tamañoA6">Tamaño A6</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
-                    <td><label for="">Formato tarjeta:</label></td>
-                    <td><select name="formatotarjeta" id="formatotarjeta">
-                        <option value="visita">Tarjeta de visita</option>
-                        <option value="agradecimiento">Tarjeta de agradecimiento</option>
-                        <option value="etiqueta">Etiqueta con cuerda</option>
-                        <option value="soporte">Soporte pendientes</option>
-                        <option value="tamañoA5">Tamaño A5</option>
-                        <option value="tamañoA6">Tamaño A6</option>
-                    </select></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type="submit" value="Enviar"></td>
+                    <td colspan="2"><input class="boton_enviar" type="submit" value="Enviar"></td>
                 </tr>
             </table>
         </form>
@@ -206,21 +261,21 @@
         <p>Si prefieres que tu tarjetas tenga un formato personalizado, mándanos un mensaje a través del siguiente formulario para darte un presupuesto ajustado a tus necesidades:</p>
         <form class="form2" action="pedido_personalizado.php" method="post">
             <table class="table2">
-                <th colspan="2">Formulario para tarjeta con formato personalizado:</th>
+                <th colspan="2">Formulario para tarjetas con formato personalizado:</th>
                 <tr>
                     <td><label for="nombre">Nombre:</label></td>
-                    <td><input type="text" name="nombre"></td>
+                    <td><input id="nombre" type="text" name="nombre"></td>
                 </tr>
                 <tr>
-                    <td>E-mail:</td>
-                    <td><input type="email" name="email"></td>
+                    <td><label for="email">E-mail:</label></td>
+                    <td><input id="email" type="email" name="email"></td>
                 </tr>
                 <tr>
                     <td><label for="mensaje">Mensaje:</label></td>
                     <td><textarea name="nombre" id="nombre" cols="30" rows="10"></textarea></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input type="submit" value="Enviar Mensaje"></td></tr>
+                    <td colspan="2"><input class="boton_enviar" type="submit" value="Enviar Mensaje"></td></tr>
             </table>
         </form>
     </section>
