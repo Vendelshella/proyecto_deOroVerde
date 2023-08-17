@@ -124,29 +124,33 @@
         }
         /* FIN NAVEGADOR */
 
+        h1{
+            font-size: 200%;
+        }
         .main{
             padding: 5%;
+            margin: 0% 15%;
             text-align: center;
         }
-        .form1, .form2{
+        .table1, .table2{
             display: flex;
             justify-content: center;
             margin: 5%;
             border: solid 2px rgb(186, 226, 107);
             padding: 5%;
         }
-        @media screen and (max-width: 360px){
+        th{
+            padding-bottom: 5%;
+            font-size: 130%;
+        }
+        
+        @media screen and (max-width: 800px){
             .main{
-                font-size: 75%;
-            }
-            .form1, .form2{
-                display: block;
-                justify-content: center;
-                border: solid 2px rgb(186, 226, 107);
+                font-size: 80%;
+                margin: 0;
             }
             td{
                 display:flex;
-                border: solid 1px rgb(147, 173, 98);
             }
         }
         </style>
@@ -172,11 +176,12 @@
     </header>
 
     <section class="main">
-        <h1>Realizar pedido</h1>
+        <h1>Realiza tu pedido</h1>
         <p>Para realizar tu pedido mándanos la imagen que quieres que aparezca en tu tarjeta y el formato de la misma a través de las siguientes opciones:</p>
         
         <form class="form1" action="pedido.php" method="post">
-            <table>
+            <table class="table1">
+                <th colspan="2">Formulario para tarjetas con formato predefinido:</th>
                 <tr>
                     <td><label>Subir imagen:</label></td>
                     <td><input type="file" name="" id="imagenpedido"></td>
@@ -193,14 +198,15 @@
                     </select></td>
                 </tr>
                 <tr>
-                    <td><input type="submit" value="Enviar"></td>
+                    <td colspan="2"><input type="submit" value="Enviar"></td>
                 </tr>
             </table>
         </form>
 
-        <p>Si prefieres que tu tarjeta tenga un formato personalizado, mándanos un mensaje a través del siguiente formulario para darte un presupuesto ajustado a tus necesidades:</p>
+        <p>Si prefieres que tu tarjetas tenga un formato personalizado, mándanos un mensaje a través del siguiente formulario para darte un presupuesto ajustado a tus necesidades:</p>
         <form class="form2" action="pedido_personalizado.php" method="post">
-            <table>
+            <table class="table2">
+                <th colspan="2">Formulario para tarjeta con formato personalizado:</th>
                 <tr>
                     <td><label for="nombre">Nombre:</label></td>
                     <td><input type="text" name="nombre"></td>
@@ -214,7 +220,7 @@
                     <td><textarea name="nombre" id="nombre" cols="30" rows="10"></textarea></td>
                 </tr>
                 <tr>
-                    <td><input type="submit" value="Enviar Mensaje"></td></tr>
+                    <td colspan="2"><input type="submit" value="Enviar Mensaje"></td></tr>
             </table>
         </form>
     </section>
