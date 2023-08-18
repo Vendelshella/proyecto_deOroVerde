@@ -129,7 +129,10 @@
         h1{
             font-size: 200%;
         }
-        
+        /* SLIDER */
+        .slider{
+            width: 50%;
+        }
         /* GALERIA */
         .fotos{
             border: solid 2px rgb(186, 226, 107);
@@ -143,13 +146,13 @@
             margin: 1%;
             transition: 0.3s;
         }
-        img:hover{
+        .fotos img:hover{
             transform: scale(2);
         }
         /*METER MEDIA QUERY*/
-        /*HACER UN CARROUSEL*/
-
+        
     </style>
+    
 </head>
 <body>
     <header>
@@ -171,7 +174,31 @@
     </header>
     <section>
         <h1>Galería</h1>
-        <h3>Papel, semillas y flores</h3>
+        <img class="slider" name="slider">
+        <script>
+            window.addEventListener('load', function(){
+                var images = [];
+
+                images[0] = 'galeria_deOroVerde/slider/Papel.jpg';
+                images[1] = 'galeria_deOroVerde/slider/Semillas.jpg';
+                images[2] = 'galeria_deOroVerde/slider/Flores.jpg';
+
+                var index = 0;
+
+                function changePictures(){
+                    
+                    document.slider.src = images[index];
+
+                    if(index < images.length-1){
+                        index++;
+                    }else{
+                        index = 0;
+                    }
+                }
+                setInterval(changePictures, 2000);
+            }
+            )
+        </script>
     </section>
     <section class="fotos">
                 <a href="galeria_deOroVerde/1.jpg"><img src="galeria_deOroVerde/1.jpg"></a>
