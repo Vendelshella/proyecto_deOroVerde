@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .grid-container {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 5px;
+        grid-template-areas:
+        "area1 area2 area2 area3"
+        "area4 area6 area5 area5";
+    }
+    .grid-item1 {grid-area: area1;}
+    .grid-item2 {grid-area: area2;}
+    .grid-item3 {grid-area: area3;}
+    .grid-item4 {grid-area: area4;}
+    .grid-item5 {grid-area: area5;}
+    .grid-item6 {grid-area: area6;}
+    div img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+      </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item1"><img src="galeria_deOroVerde/1.jpg"></div>
+        <div class="grid-item2"><img src="galeria_deOroVerde/2.jpg"></div>
+        <div class="grid-item3"><img src="galeria_deOroVerde/3.jpg"></div>
+        <div class="grid-item4"><img src="galeria_deOroVerde/4.jpg"></div>
+        <div class="grid-item5"><img src="galeria_deOroVerde/5.jpg"></div>
+        <div class="grid-item6"><img src="galeria_deOroVerde/6.jpg"></div>
+      </div>
+</body>
+</html>

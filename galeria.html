@@ -135,34 +135,41 @@
             margin-bottom: 10%;
         }
         /* GALERIA */
-        .fotos{
+        .grid-container{
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: 150px;
-            grid-gap: 1%;
+            grid-gap: 5px;
+            margin: 0% 5%;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: repeat(5, 1fr);
+            grid-template-areas: 
+            "area1 area2 area2 area3"
+            "area4 area5 area6 area6"
+            "area7 area7 area8 area8"
+            "area10 area10 area8 area8"
+            "area9 area11 area8 area8";
         }
-        a img{
+        div img{
             width: 100%;
             height: 100%;
             object-fit: cover;
-            margin: 1%;
             transition: 0.3s;
         }
-        .horizontal{
-            grid-column-start: span 2;
+        .grid-container img:hover{
+            transform: scale(1.5);
         }
-        .vertical{
-            grid-row-start: span 2;
-        }
-        .fotos img:hover{
-            transform: scale(2);
-        }
+        .grid-item1{grid-area: area1;}
+        .grid-item2{grid-area: area2;}
+        .grid-item3{grid-area: area3;}
+        .grid-item4{grid-area: area4;}
+        .grid-item5{grid-area: area5;}
+        .grid-item6{grid-area: area6;}
+        .grid-item7{grid-area: area7;}
+        .grid-item8{grid-area: area8;}
+        .grid-item9{grid-area: area9;}
+        .grid-item10{grid-area: area10;}
+        .grid-item11{grid-area: area11;}
         /*METER MEDIA QUERY*/
-        @media screen and (max-width: 650px) {
-            .fotos img{
-                display: grid;
-            }
-        }
+        
     </style>
     
 </head>
@@ -212,27 +219,27 @@
             )
         </script>
     </section>
-    <section class="fotos">
-                <a href="galeria_deOroVerde/1.jpg"><img class="vertical" src="galeria_deOroVerde/1.jpg"></a>
-                <a href="galeria_deOroVerde/2.jpg"><img class="horizontal" src="galeria_deOroVerde/3.jpg"></a>
-                <a href="galeria_deOroVerde/3.jpg"><img class="vertical" src="galeria_deOroVerde/4.jpg"></a>
-                <a href="galeria_deOroVerde/4.jpg"><img class="vertical" src="galeria_deOroVerde/2.jpg"></a>
-                <a href="galeria_deOroVerde/5.jpg"><img class="horizontal" src="galeria_deOroVerde/5.jpg"></a>
-                <a href="galeria_deOroVerde/6.jpg"><img class="vertical" src="galeria_deOroVerde/6.jpg"></a>
-                <a href="galeria_deOroVerde/7.jpg"><img class="horizontal" src="galeria_deOroVerde/7.jpg"></a>
-                <a href="galeria_deOroVerde/8.jpg"><img class="vertical" src="galeria_deOroVerde/8.jpg"></a>
-                <a href="galeria_deOroVerde/9.jpg"><img class="vertical" src="galeria_deOroVerde/9.jpg"></a>
-                <a href="galeria_deOroVerde/10.jpg"><img class="horizontal" src="galeria_deOroVerde/10.jpg"></a>
-                <a href="galeria_deOroVerde/11.jpg"><img class="vertical" src="galeria_deOroVerde/11.jpg"></a>
-                <a href="galeria_deOroVerde/12.jpg"><img class="vertical" src="galeria_deOroVerde/12.jpg"></a>
-                <a href="galeria_deOroVerde/13.jpg"><img class="vertical" src="galeria_deOroVerde/13.jpg"></a>
-                <a href="galeria_deOroVerde/14.jpg"><img class="horizontal" src="galeria_deOroVerde/14.jpg"></a>
-                <a href="galeria_deOroVerde/15.jpg"><img class="vertical" src="galeria_deOroVerde/15.jpg"></a>
-                <a href="galeria_deOroVerde/16.jpg"><img class="horizontal" src="galeria_deOroVerde/16.jpg"></a>
-                <a href="galeria_deOroVerde/17.jpg"><img class="horizontal" src="galeria_deOroVerde/17.jpg"></a>
-                <a href="galeria_deOroVerde/18.jpg"><img class="horizontal" src="galeria_deOroVerde/18.jpg"></a>
-                <a href="galeria_deOroVerde/19.jpg"><img class="vertical" src="galeria_deOroVerde/19.jpg"></a>
-                <a href="galeria_deOroVerde/20.jpg"><img class="horizontal"src="galeria_deOroVerde/20.jpg"></a>
+    <section class="grid-container">
+        <div class="grid-item1"><img src="galeria_deOroVerde/1.jpg"></div>
+        <div class="grid-item2"><img src="galeria_deOroVerde/2.jpg"></div>
+        <div class="grid-item3"><img src="galeria_deOroVerde/3.jpg"></div>
+        <div class="grid-item4"><img src="galeria_deOroVerde/4.jpg"></div>
+        <div><img class="grid-item5" src="galeria_deOroVerde/5.jpg"></div>
+        <div><img class="grid-item6" src="galeria_deOroVerde/6.jpg"></div>
+        <div><img class="grid-item7" src="galeria_deOroVerde/7.jpg"></div>
+        <div><img class="grid-item8" src="galeria_deOroVerde/8.jpg"></div>
+        <div><img class="grid-item9" src="galeria_deOroVerde/9.jpg"></div>
+        <div><img class="grid-item10" src="galeria_deOroVerde/10.jpg"></div>
+        <div><img class="grid-item11" src="galeria_deOroVerde/11.jpg"></div>
+        <!--<div><img class="grid-item12" src="galeria_deOroVerde/12.jpg"></div>
+        <div><img class="grid-item13" src="galeria_deOroVerde/13.jpg"></div>
+        <div><img class="grid-item14" src="galeria_deOroVerde/14.jpg"></div>
+        <div><img class="grid-item15" src="galeria_deOroVerde/15.jpg"></div>
+        <div><img class="grid-item16" src="galeria_deOroVerde/16.jpg"></div>
+        <div><img class="grid-item17" src="galeria_deOroVerde/17.jpg"></div>
+        <div><img class="grid-item18" src="galeria_deOroVerde/18.jpg"></div>
+        <div><img class="grid-item19" src="galeria_deOroVerde/19.jpg"></div>
+        <div><img class="grid-item20" src="galeria_deOroVerde/20.jpg"></div>-->
     </section>
     <footer>
 
