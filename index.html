@@ -127,22 +127,22 @@
             background-repeat: no-repeat;
             background-size: 100%;
         }
-        #imgcatalogo{
+        .imgcatalogo{
             margin-left: 65%;
             margin-top: 45%;
             width: 35%;
         }
-        #imgpedido{
+        .imgpedido{
             margin-left: 40%;
             margin-top: 10%;
             width: 35%;
         }
-        #imggaleria{
+        .imggaleria{
             margin-left: 30%;
             margin-top: 15%;
             width: 35%;
         }
-        #imgvolver{
+        .imgvolver{
             margin-left: 65%;
             margin-bottom: 18%;
             width: 35%;
@@ -153,9 +153,28 @@
             color:rgb(5, 41, 5);
             padding-top: 1%;
         }
-        h1 #contacto{
+        /* ANIMACION ENLACES ARBOL */
+        .imgcatalogo{
+            opacity: 0;
+            animation: scale(0);
+            transform: 0.6s ease-in 0.3s;
+
+            /*custom properties*/
+            --opacity: 1;
+            --transform: scale(1);
+        }
+        .unset{
+            opacity: var(--opacity);
+            transform: var(--transform);
         }
     </style>
+    <script>
+        window.addEventListener('load', function (){
+            const links = document.querySelectorAll('.js-scroll');
+            /*minuto 17 https://www.youtube.com/watch?v=T24PsErQGPg&t=162s*/
+        })
+
+    </script>
 </head>
 <body>
     <header>
@@ -178,14 +197,14 @@
     </header>
     
     <section class="arbol" id="arbol">
-        <a href="documentos_proyecto/Información deOroVerde.pdf"><img id="imgcatalogo" src="images/frame_catalogo.png" width="50%" alt="Inicio" ></a>
-        <a href="realizar_pedido.html"><img id="imgpedido" src="images/frame_realizar_pedido.png" width="50%" alt="Inicio" ></a>
-        <a href="galeria.html"><img id="imggaleria" src="images/frame_galeria.png" width="50%" alt="Inicio" ></a>
-        <a href="#inicio"><img id="imgvolver" src="images/frame_volver_inicio.png" width="50%" alt="Inicio" ></a>
+        <a href="documentos_proyecto/Información deOroVerde.pdf"><img class="imgcatalogo js-scroll" id="imgcatalogo" src="images/frame_catalogo.png" width="50%" alt="Inicio" ></a>
+        <a href="realizar_pedido.html"><img class="imgpedido js-scroll" id="imgpedido" src="images/frame_realizar_pedido.png" width="50%" alt="Inicio" ></a>
+        <a href="galeria.html"><img class="imggaleria js-scroll" id="imggaleria" src="images/frame_galeria.png" width="50%" alt="Inicio" ></a>
+        <a href="#inicio"><img class="imgvolver js-scroll" id="imgvolver" src="images/frame_volver_inicio.png" width="50%" alt="Inicio" ></a>
         
     </section>
     <footer class="contacto">
-        <h1 id="contacto">Contacto</h1>
+        <h2 id="contacto">Contacto</h2>
         <p>Aquí va el contacto y las RRSS</p>
         <br>
     </footer>
