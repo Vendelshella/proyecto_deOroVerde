@@ -15,7 +15,7 @@
 
         /* NAVEGADOR */
         header{
-            background-color: rgb(186, 226, 107);
+            background: linear-gradient(to left, rgb(186, 226, 107) 10%, white);
             display: flex;
             align-items: center;
             position: relative;
@@ -125,6 +125,7 @@
         /* FIN NAVEGADOR */
         section{
             text-align: center;
+            margin-bottom: 5%;
         }
         h1{
             font-size: 200%;
@@ -202,31 +203,7 @@
     </header>
     <section>
         <h1>Galería</h1>
-        <img class="slider" name="slider">
-        <script>
-            window.addEventListener('load', function(){
-                var images = [];
-
-                images[0] = 'galeria_deOroVerde/slider/Papel.jpg';
-                images[1] = 'galeria_deOroVerde/slider/Semillas.jpg';
-                images[2] = 'galeria_deOroVerde/slider/Flores.jpg';
-
-                var index = 0;
-
-                function changePictures(){
-                    
-                    document.slider.src = images[index];
-
-                    if(index < images.length-1){
-                        index++;
-                    }else{
-                        index = 0;
-                    }
-                }
-                setInterval(changePictures, 2000);
-            }
-            )
-        </script>
+        <h3>Papel, semillas y plantitas 🌱</h3>
     </section>
     <div class="grid-container">
         <div class="grid-item1"><img src="galeria_deOroVerde/1.jpg"></div>
