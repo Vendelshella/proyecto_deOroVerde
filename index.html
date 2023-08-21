@@ -144,7 +144,8 @@
         }
         .imgvolver{
             margin-left: 65%;
-            margin-bottom: 18%;
+            margin-top: 5%;
+            margin-bottom: 10%;
             width: 35%;
         }
         .contacto{
@@ -154,10 +155,11 @@
             padding-top: 1%;
         }
         /* ANIMACION ENLACES ARBOL */
-        .imgcatalogo{
+        .cuadro{
             opacity: 0;
             animation: scale(0);
             transform: 0.6s ease-in 0.3s;
+            transition: 1s;
 
             /*custom properties*/
             --opacity: 1;
@@ -170,8 +172,30 @@
     </style>
     <script>
         window.addEventListener('load', function (){
-            const links = document.querySelectorAll('.js-scroll');
-            /*minuto 17 https://www.youtube.com/watch?v=T24PsErQGPg&t=162s*/
+            const images = document.querySelectorAll('.enlaceCuadro');
+            
+            function triggerAnimation(entries){
+                entries.forEach(function(entry){
+
+                    const image = entry.target.querySelector('img');
+
+                    image.classList.toggle('unset', entry.isIntersecting);
+                    /*.isIntersecting true, nos dice que la imagen es visible en el viewport*/
+                    /*image.classList.add('unset', entry.isIntersecting);*/
+                });
+            }
+            /*configuracion visibilidad en el viewport*/
+            const options ={
+                root: null,
+                rootMargin: "0px",
+                threshold: 1/*imagen totalmente visible en el viewport*/
+            }
+
+            const observer = new IntersectionObserver(triggerAnimation, options);
+
+            images.forEach(function (image){
+                observer.observe(image);
+            })
         })
 
     </script>
@@ -197,10 +221,10 @@
     </header>
     
     <section class="arbol" id="arbol">
-        <a href="documentos_proyecto/Información deOroVerde.pdf"><img class="imgcatalogo js-scroll" id="imgcatalogo" src="images/frame_catalogo.png" width="50%" alt="Inicio" ></a>
-        <a href="realizar_pedido.html"><img class="imgpedido js-scroll" id="imgpedido" src="images/frame_realizar_pedido.png" width="50%" alt="Inicio" ></a>
-        <a href="galeria.html"><img class="imggaleria js-scroll" id="imggaleria" src="images/frame_galeria.png" width="50%" alt="Inicio" ></a>
-        <a href="#inicio"><img class="imgvolver js-scroll" id="imgvolver" src="images/frame_volver_inicio.png" width="50%" alt="Inicio" ></a>
+        <a class="enlaceCuadro" href="documentos_proyecto/Información deOroVerde.pdf"><img class="imgcatalogo cuadro" id="imgcatalogo" src="images/frame_catalogo.png" width="50%" alt="Inicio" ></a>
+        <a class="enlaceCuadro" href="realizar_pedido.html"><img class="imgpedido cuadro" id="imgpedido cuadro" src="images/frame_realizar_pedido.png" width="50%" alt="Inicio" ></a>
+        <a class="enlaceCuadro" href="galeria.html"><img class="imggaleria cuadro" id="imggaleria" src="images/frame_galeria.png" width="50%" alt="Inicio" ></a>
+        <a class="enlaceCuadro" href="#inicio"><img class="imgvolver cuadro" id="imgvolver" src="images/frame_volver_inicio.png" width="50%" alt="Inicio" ></a>
         
     </section>
     <footer class="contacto">
