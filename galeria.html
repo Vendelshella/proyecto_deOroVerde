@@ -4,201 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>deOroVerde</title>
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="css/body_galeria.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
     <style>
-        body{
-            margin: 0;
-            padding:0;
-            box-sizing: border-box;
-            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
-            color:rgb(5, 41, 5);
-        }
-
-        /* NAVEGADOR */
-        header{
-            background: linear-gradient(to left, rgb(186, 226, 107) 10%, white);
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-        #logohead{
-            display: flex;
-            width: 20%;
-            height: 5%;
-        }
-        .checkbox, .icons{
-            opacity: 0;
-            visibility: hidden;
-            width: 20px;
-        }
-        @media screen and (max-width: 650px){
-            #logohead{
-                width: 25%;
-                height: 10%;
-            }
-            .divnav{
-                opacity: 0;
-                visibility: hidden;
-                position: absolute;
-                left: 20%;
-                transition: 0.3s;
-            }
-            .checkbox{
-                opacity: 0;
-                visibility: visible;
-                margin-left: 90%;
-                position: absolute;
-                width: 5%;
-                cursor: pointer;
-            }
-            .icons{
-                opacity: 1;
-                visibility: visible;
-                margin-left: 90%;
-                position: absolute;
-                width: 5%;
-            }
-            .icons{
-                pointer-events: none;
-            }
-            .checkbox:checked ~ .divnav{
-                opacity: 1;
-                visibility: visible;
-            }
-            .icons.close{
-                display: none;
-            }
-            .checkbox:checked ~ .icons.open{
-                display: none;
-            }
-            .checkbox:checked ~ .icons.close{
-                display: block;
-            }
-            .nav{
-                margin-top: 4%;
-                position: absolute;
-                right: 0;
-                background-color: rgb(186, 226, 107);
-                padding: 0% 3%;
-            }
-            nav ul{
-                flex-direction: column;
-            }
-            nav ul li{
-                width: 100%;
-                font-size: 70%;
-                margin: 5% 0%;
-            }
-            nav ul li:hover{
-                background-color: rgb(147, 173, 98);
-            }
-            nav ul li a{
-                margin: 50% 0%;
-            }
-        }
-        #divnav{
-            margin: auto;
-            padding: 0;
-            width: 80%;
-        }
-        nav ul{
-            list-style: none;
-            display: flex;
-            align-items: center;
-            padding: 0;
-            justify-content: flex-end;
-        }
-        nav ul li{
-            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
-            padding: 1% 2%;
-            text-decoration: none;
-            transition: 0.2s;
-        }
-        nav ul li:hover{
-            transform: scale(1.1);
-            background-color: rgb(147, 173, 98);
-        }
-        nav ul li a{
-            text-decoration: none;
-            color:rgb(5, 41, 5);
-            font-size: 110%;
-        }
-        /* FIN NAVEGADOR */
-        section{
-            text-align: center;
-            margin-bottom: 5%;
-        }
-        h1{
-            font-size: 200%;
-        }
-        /* SLIDER */
-        .slider{
-            width: 50%;
-            margin-bottom: 10%;
-        }
-        /* GALERIA */
-        .grid-container {
-            display: grid;
-            grid-template-rows: repeat(9, 1fr);
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-gap: 10px;
-            margin: 5% 5%;
-            grid-template-areas:
-            "area1 area2 area2 area3"
-            "area4 area6 area5 area5"
-            "area7 area7 area8 area8"
-            "area10 area10 area8 area8"
-            "area9 area11 area20 area20"
-            "area12 area13 area13 area19"
-            "area14 area14 area16 area16"
-            "area15 area15 area17 area17"
-            "area15 area15 area18 area18";
-        }
-        .grid-item1 {grid-area: area1;}
-        .grid-item2 {grid-area: area2;}
-        .grid-item3 {grid-area: area3;}
-        .grid-item4 {grid-area: area4;}
-        .grid-item5 {grid-area: area5;}
-        .grid-item6 {grid-area: area6;}
-        .grid-item7 {grid-area: area7;}
-        .grid-item8 {grid-area: area8;}
-        .grid-item9 {grid-area: area9;}
-        .grid-item10 {grid-area: area10;}
-        .grid-item11 {grid-area: area11;}
-        .grid-item12 {grid-area: area12;}
-        .grid-item13 {grid-area: area13;}
-        .grid-item14 {grid-area: area14;}
-        .grid-item15 {grid-area: area15;}
-        .grid-item16 {grid-area: area16;}
-        .grid-item17 {grid-area: area17;}
-        .grid-item18 {grid-area: area18;}
-        .grid-item19 {grid-area: area19;}
-        .grid-item20 {grid-area: area20;}
         
-        div img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        /* FIN GALERIA */
-        /* SECCION CONTACTO */
-        .contacto{
-            background: linear-gradient(to right, rgb(186, 226, 107) 10%, white);
-            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
-            color:rgb(5, 41, 5);
-            padding: 0% 2% 2% 2%;
-            text-align: center;
-        }
-        .contacto h2{
-            text-align: center;
-        }
-        .contacto table tr td{
-            font-size: 100%;
-        }
-        .texto{
-            font-weight: bold;
-            text-align: left;
-        }
-        /* FIN SECCION CONTACTO */
+        
     </style>
     
 </head>
@@ -225,26 +36,26 @@
         <h3>Papel, semillas y plantitas 🌱</h3>
     </section>
     <div class="grid-container">
-        <div class="grid-item1"><img src="galeria_deOroVerde/1.jpg"></div>
-        <div class="grid-item2"><img src="galeria_deOroVerde/2.jpg"></div>
-        <div class="grid-item3"><img src="galeria_deOroVerde/3.jpg"></div>
-        <div class="grid-item4"><img src="galeria_deOroVerde/4.jpg"></div>
-        <div class="grid-item5"><img src="galeria_deOroVerde/5.jpg"></div>
-        <div class="grid-item6"><img src="galeria_deOroVerde/6.jpg"></div>
-        <div class="grid-item7"><img src="galeria_deOroVerde/7.jpg"></div>
-        <div class="grid-item8"><img src="galeria_deOroVerde/8.jpg"></div>
-        <div class="grid-item9"><img src="galeria_deOroVerde/9.jpg"></div>
-        <div class="grid-item10"><img src="galeria_deOroVerde/10.jpg"></div>
-        <div class="grid-item11"><img src="galeria_deOroVerde/11.jpg"></div>
-        <div class="grid-item12"><img src="galeria_deOroVerde/12.jpg"></div>
-        <div class="grid-item13"><img src="galeria_deOroVerde/13.jpg"></div>
-        <div class="grid-item14"><img src="galeria_deOroVerde/14.jpg"></div>
-        <div class="grid-item15"><img src="galeria_deOroVerde/15.jpg"></div>
-        <div class="grid-item16"><img src="galeria_deOroVerde/16.jpg"></div>
-        <div class="grid-item17"><img src="galeria_deOroVerde/17.jpg"></div>
-        <div class="grid-item18"><img src="galeria_deOroVerde/18.jpg"></div>
-        <div class="grid-item19"><img src="galeria_deOroVerde/19.jpg"></div>
-        <div class="grid-item20"><img src="galeria_deOroVerde/20.jpg"></div>
+        <div class="grid-item1"><img src="images/galeria_deOroVerde/1.jpg"></div>
+        <div class="grid-item2"><img src="images/galeria_deOroVerde/2.jpg"></div>
+        <div class="grid-item3"><img src="images/galeria_deOroVerde/3.jpg"></div>
+        <div class="grid-item4"><img src="images/galeria_deOroVerde/4.jpg"></div>
+        <div class="grid-item5"><img src="images/galeria_deOroVerde/5.jpg"></div>
+        <div class="grid-item6"><img src="images/galeria_deOroVerde/6.jpg"></div>
+        <div class="grid-item7"><img src="images/galeria_deOroVerde/7.jpg"></div>
+        <div class="grid-item8"><img src="images/galeria_deOroVerde/8.jpg"></div>
+        <div class="grid-item9"><img src="images/galeria_deOroVerde/9.jpg"></div>
+        <div class="grid-item10"><img src="images/galeria_deOroVerde/10.jpg"></div>
+        <div class="grid-item11"><img src="images/galeria_deOroVerde/11.jpg"></div>
+        <div class="grid-item12"><img src="images/galeria_deOroVerde/12.jpg"></div>
+        <div class="grid-item13"><img src="images/galeria_deOroVerde/13.jpg"></div>
+        <div class="grid-item14"><img src="images/galeria_deOroVerde/14.jpg"></div>
+        <div class="grid-item15"><img src="images/galeria_deOroVerde/15.jpg"></div>
+        <div class="grid-item16"><img src="images/galeria_deOroVerde/16.jpg"></div>
+        <div class="grid-item17"><img src="images/galeria_deOroVerde/17.jpg"></div>
+        <div class="grid-item18"><img src="images/galeria_deOroVerde/18.jpg"></div>
+        <div class="grid-item19"><img src="images/galeria_deOroVerde/19.jpg"></div>
+        <div class="grid-item20"><img src="images/galeria_deOroVerde/20.jpg"></div>
     </div>
     <footer class="contacto">
         <table>

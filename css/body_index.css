@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+.arbol{
+    background-image: url(../images/plant1nest.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.imgcatalogo{
+    margin-left: 65%;
+    margin-top: 45%;
+    width: 35%;
+}
+.imgpedido{
+    margin-left: 40%;
+    margin-top: 10%;
+    width: 35%;
+}
+.imggaleria{
+    margin-left: 30%;
+    margin-top: 15%;
+    width: 35%;
+}
+.imgvolver{
+    margin-left: 65%;
+    margin-top: 5%;
+    margin-bottom: 12%;
+    width: 35%;
+}
+/* ANIMACION ENLACES ARBOL */
+.cuadro{
+    opacity: 0;
+    animation: scale(0);
+    transform: 0.6s ease-in 0.3s;
+    transition: 1s;
+}
+.unset{
+    opacity: 1;
+    transform: scale(1);
+}
+/* deOroVerde87* */
