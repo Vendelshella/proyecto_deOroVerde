@@ -48,7 +48,6 @@ div .input_file p{
     height: 100%;
     opacity: 0;
     cursor: pointer;
-
 }
 /* fin boton input file */
 .seleccion{
@@ -86,5 +85,14 @@ textarea, #nombre, #email{
     }
     .input_file{
         padding: 0% 2%;
+    }
+    .table2 label{
+        margin: 5%;
+    }
+    .table2 th{
+        margin: 5%;
+    }
+    textarea{
+        width: 100%;
     }
 }
