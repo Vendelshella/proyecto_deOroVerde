@@ -34,7 +34,7 @@
         <h1>Realiza tu pedido</h1>
         <p>Para realizar tu pedido mándanos la imagen que quieres que aparezca en tu tarjeta y el formato de la misma a través de las siguientes opciones:</p>
         
-        <form class="form1" action="pedido.php" method="post">
+        <form class="form1" action="pedido_form1" method="post" enctype="multipart/form-data">
             <table class="table1">
                 <th colspan="2">Formulario para tarjetas con formato predefinido:</th>
                 <tr>
@@ -50,14 +50,14 @@
                     <td class="boton_archivo">
                         <div class="input_file">
                             <p>Seleccionar archivo</p>
-                            <input class="subir_archivo" type="file" id="subir_archivo">
+                            <input class="subir_archivo" type="file" id="subir_archivo" name="archivo">
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <td><label for="formato_tarjeta">Formato tarjeta:</label></td>
                     <td>
-                        <select class="seleccion" name="formato_tarjeta" id="formato_tarjeta">
+                        <select class="seleccion" name="formato" id="formato_tarjeta">
                             <option value="visita">Tarjeta de visita</option>
                             <option value="agradecimiento">Tarjeta de agradecimiento</option>
                             <option value="etiqueta">Etiqueta con cuerda</option>
@@ -85,7 +85,7 @@
         </form>
 
         <p>Si prefieres que tu tarjetas tenga un formato personalizado, mándanos un mensaje a través del siguiente formulario para darte un presupuesto ajustado a tus necesidades:</p>
-        <form class="form2" action="pedido_personalizado.php" method="post">
+        <form class="form2" action="pedido_form2.php" method="post">
             <table class="table2">
                 <th colspan="2">Formulario para tarjetas con formato personalizado:</th>
                 <tr>
@@ -98,7 +98,7 @@
                 </tr>
                 <tr>
                     <td><label for="mensaje">Mensaje:</label></td>
-                    <td><textarea name="nombre" id="nombre" cols="30" rows="10"></textarea></td>
+                    <td><textarea name="nombre" id="nombre" cols="60" rows="10"></textarea></td>
                 </tr>
                 <tr>
                     <td colspan="2"><input class="boton_enviar" type="submit" value="Enviar Mensaje"></td></tr>
