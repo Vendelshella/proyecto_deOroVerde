@@ -20,8 +20,8 @@
                 <ul>
                     <li id="inicio"><a href="#">Inicio</a></li>
                     <li><a href="documents/Información deOroVerde.pdf">Catálogo</a></li>
-                    <li><a href="realizar_pedido.html">Realizar pedido</a></li>
-                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="realizar_pedido.php">Realizar pedido</a></li>
+                    <li><a href="galeria.php">Galería</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
@@ -30,8 +30,8 @@
     
     <section class="arbol" id="arbol">
         <a class="enlaceCuadro" href="documents/Información deOroVerde.pdf"><img class="imgcatalogo cuadro" id="imgcatalogo" src="images/frame_catalogo.png" alt="Catálogo" ></a>
-        <a class="enlaceCuadro" href="galeria.html"><img class="imggaleria cuadro" id="imggaleria cuadro" src="images/frame_galeria.png" alt="Galeria" ></a>
-        <a class="enlaceCuadro" href="realizar_pedido.html"><img class="imgpedido cuadro" id="imgpedido" src="images/frame_realizar_pedido.png" alt="Realizar pedido" ></a>
+        <a class="enlaceCuadro" href="galeria.php"><img class="imggaleria cuadro" id="imggaleria cuadro" src="images/frame_galeria.png" alt="Galeria" ></a>
+        <a class="enlaceCuadro" href="realizar_pedido.php"><img class="imgpedido cuadro" id="imgpedido" src="images/frame_realizar_pedido.png" alt="Realizar pedido" ></a>
         <a class="enlaceCuadro" href="#inicio"><img class="imgvolver cuadro" id="imgvolver" src="images/frame_volver_inicio.png" alt="Inicio" ></a>
         
     </section>

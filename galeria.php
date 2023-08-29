@@ -22,10 +22,10 @@
         <div id="divnav" class="divnav">
             <nav id="nav" class="nav">
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.php">Inicio</a></li>
                     <li><a href="documents/Información deOroVerde.pdf">Catálogo</a></li>
-                    <li><a href="realizar_pedido.html">Realizar pedido</a></li>
-                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="realizar_pedido.php">Realizar pedido</a></li>
+                    <li><a href="galeria.php">Galería</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
