@@ -33,6 +33,7 @@
     <section class="main">
         <h1>Realiza tu pedido</h1>
         <p>Para realizar tu pedido mándanos la imagen que quieres que aparezca en tu tarjeta (tamaño máximo 2MB) y el formato de la misma (.jpg, .jpeg y .png) a través de las siguientes opciones:</p>
+        <p>(Todos los campos son obligatorios.)</p>
         
         <form class="form1" action="pedido_form1.php" method="post" enctype="multipart/form-data">
             <table class="table1">

@@ -1,4 +1,6 @@
 <?php
+//VALIDAR LOS DATOS DEL FORMULARIO CON PHP
+
 
 /*datos del formulario*/
 $nombre=$_POST["nombre"];
@@ -13,7 +15,7 @@ $carpeta="/proyecto_deOroVerde/uploads/";
 $formato=$_POST["formato"];
 $cantidad=$_POST["cantidad"];
 
-if ($carpeta==false) {
+if (!is_dir($carpeta)) {
     mkdir("uploads");
 }
 
@@ -26,13 +28,11 @@ if($tamaño_archivo<=2000000 && ($tipo_archivo=="image/jpeg" || $tipo_archivo=="
     cómo configurar los permisos utilizando las herramientas de gestión de archivos de tu panel de control de Hostinger.*/
 
     //de carpeta temporal a carpeta destino:
-    if(move_uploaded_file($archivo["tmp_name"], $ruta_destino.$nombre_archivo)){
-        echo "Archivo subido correctamente<br>";
-    }else{
-        echo "Error al subir el archivo";
+    if(move_uploaded_file($archivo["tmp_name"], $ruta_destino.$nombre_archivo)==false){
+        header('Location: subida_error.php');
     }
 }else{
-    echo "Error al subir el archivo. El tamaño del archivo es mayor de 2 MB o el formato no es .jpg .jpeg o .png";
+    header('Location: subida_error.php');
 }
 
 /*datos de conexión**/
@@ -46,7 +46,7 @@ $conexion=mysqli_connect($db_host, $db_usuario, $db_contra, $db_nombre);
 
 /*manejo de errores*/
 if(mysqli_connect_errno()==true){
-    echo "Fallo al conectar con la BBDD";
+    header('Location: error_conexion.php');
     exit();
 }
 
@@ -58,11 +58,9 @@ $result=mysqli_query($conexion, $sql);
 
 /*Éxito o fallo en el envío del formulario*/
 if($result==false){
-    echo "Error en el envío del formulario.<br>";
-    /*header('Location: formulario_no_enviado.php');*/
+    header('Location: subida_error.php');
 }else{
-    echo "Formulario enviado";
-    /*header('Location: formulario_enviado.php');*/
+    header('Location: subida_exito.php');
 }
 
 //Cerrar la conexión con la BBDD:
