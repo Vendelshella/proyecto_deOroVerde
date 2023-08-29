@@ -13,7 +13,7 @@ $carpeta="/proyecto_deOroVerde/uploads/";
 $formato=$_POST["formato"];
 $cantidad=$_POST["cantidad"];
 
-if (!is_dir($carpeta)) {
+if ($carpeta==false) {
     mkdir("uploads");
 }
 
@@ -27,7 +27,7 @@ if($tamaño_archivo<=2000000 && ($tipo_archivo=="image/jpeg" || $tipo_archivo=="
 
     //de carpeta temporal a carpeta destino:
     if(move_uploaded_file($archivo["tmp_name"], $ruta_destino.$nombre_archivo)){
-        echo "Archivo subido correctamente";
+        echo "Archivo subido correctamente<br>";
     }else{
         echo "Error al subir el archivo";
     }
@@ -52,13 +52,13 @@ if(mysqli_connect_errno()==true){
 
 mysqli_set_charset($conexion, "utf8");
 
-$sql="INSERT INTO `pedido_form1`(`Nombre`, `Email`, `Imagen`, `Formato`, `Cantidad`) VALUES ('$nombre', '$email', '$archivo', '$formato', $cantidad)";
+$sql="INSERT INTO `pedido_form1`(`Nombre`, `Email`, `Imagen`, `Formato`, `Cantidad`) VALUES ('$nombre', '$email', '$nombre_archivo', '$formato', $cantidad)";
 
 $result=mysqli_query($conexion, $sql);
 
 /*Éxito o fallo en el envío del formulario*/
 if($result==false){
-    echo "Error en el envío del formulario.";
+    echo "Error en el envío del formulario.<br>";
     /*header('Location: formulario_no_enviado.php');*/
 }else{
     echo "Formulario enviado";
