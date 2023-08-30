@@ -36,31 +36,45 @@ if(mysqli_connect_errno()==true){
 
 mysqli_set_charset($conexion, "utf8");
 
+
+
 /*restricción de tamaño (2MB) y tipo de archivo*/
 if($tamaño_archivo<=2097152 && ($tipo_archivo=="image/jpeg" || $tipo_archivo=="image/jpg" || $tipo_archivo=="image/png")){
+    if(is_uploaded_file($archivo["tmp_name"])){
+        /*crear una cuenta ftp en HOSTINGER y rellenar los siguientes campos*/
+        $host="ftp.szmblog.es";
+        $puerto=21;
+        $usuario="u811732966.Sonia";
+        $clave="20012510Sonia*";
+        $guardar_en="/";
+        
+        //conectar con el Servidor
+        $conexion_server=@ftp_connect($host,$puerto);
+        if($conexion_server){
+            if(@ftp_login($conexion_server,$usuario,$clave)){
+                //indicar el directorio donde se guardará
+                if(@ftp_chdir($conexion_server,$guardar_en)){
+                    //subida del archivo por FTP
+                    if(@ftp_put($conexion_server,$nombre_archivo,$archivo["tmp_name"],FTP_BINARY)){
+                        
+                    $sql="INSERT INTO `pedido_form1`(`Nombre`, `Email`, `Imagen`, `Formato`, `Cantidad`) VALUES ('$nombre', '$email', '$nombre_archivo', '$formato', $cantidad)";
 
-    /*ruta carpeta de destino*/
-    $ruta_destino=$_SERVER["DOCUMENT_ROOT"] . $carpeta;
-    /*COMO GUARDO LOS ARCHIVOS DE IMAGEN EN HOSTINGUER???
-    cómo configurar los permisos utilizando las herramientas de gestión de archivos de tu panel de control de Hostinger.*/
+                    $result=mysqli_query($conexion, $sql);
 
-    //de carpeta temporal a carpeta destino:
-    if(move_uploaded_file($archivo["tmp_name"], $ruta_destino.$nombre_archivo)==false){
-        header('Location: subida_error.php');
-    }
-
-    $sql="INSERT INTO `pedido_form1`(`Nombre`, `Email`, `Imagen`, `Formato`, `Cantidad`) VALUES ('$nombre', '$email', '$nombre_archivo', '$formato', $cantidad)";
-
-    $result=mysqli_query($conexion, $sql);
-
-    /*Éxito o fallo en el envío del formulario*/
-    if($result==false){
-        header('Location: subida_error.php');
+                    /*Éxito o fallo en el envío del formulario*/
+                    if($result==false){
+                        header('Location: subida_error.php');
+                    }else{
+                        header('Location: subida_exito.php');
+                    }
+                    }
+                }
+                ftp_close($conexion);
+            }
+        }
     }else{
-        header('Location: subida_exito.php');
+        header('Location: subida_error.php');
     }
-}else{
-    header('Location: subida_error.php');
 }
 
 //Cerrar la conexión con la BBDD:
