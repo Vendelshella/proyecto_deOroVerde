@@ -19,22 +19,6 @@ if (!is_dir($carpeta)) {
     mkdir("uploads");
 }
 
-/*restricción de tamaño (2MB) y tipo de archivo*/
-if($tamaño_archivo<=2000000 && ($tipo_archivo=="image/jpeg" || $tipo_archivo=="image/jpg" || $tipo_archivo=="image/png")){
-
-    /*ruta carpeta de destino*/
-    $ruta_destino=$_SERVER["DOCUMENT_ROOT"] . $carpeta;
-    /*COMO GUARDO LOS ARCHIVOS DE IMAGEN EN HOSTINGUER???
-    cómo configurar los permisos utilizando las herramientas de gestión de archivos de tu panel de control de Hostinger.*/
-
-    //de carpeta temporal a carpeta destino:
-    if(move_uploaded_file($archivo["tmp_name"], $ruta_destino.$nombre_archivo)==false){
-        header('Location: subida_error.php');
-    }
-}else{
-    header('Location: subida_error.php');
-}
-
 /*datos de conexión**/
 $db_host="localhost";
 $db_nombre="deOroVerde";
@@ -52,15 +36,31 @@ if(mysqli_connect_errno()==true){
 
 mysqli_set_charset($conexion, "utf8");
 
-$sql="INSERT INTO `pedido_form1`(`Nombre`, `Email`, `Imagen`, `Formato`, `Cantidad`) VALUES ('$nombre', '$email', '$nombre_archivo', '$formato', $cantidad)";
+/*restricción de tamaño (2MB) y tipo de archivo*/
+if($tamaño_archivo<=2097152 && ($tipo_archivo=="image/jpeg" || $tipo_archivo=="image/jpg" || $tipo_archivo=="image/png")){
 
-$result=mysqli_query($conexion, $sql);
+    /*ruta carpeta de destino*/
+    $ruta_destino=$_SERVER["DOCUMENT_ROOT"] . $carpeta;
+    /*COMO GUARDO LOS ARCHIVOS DE IMAGEN EN HOSTINGUER???
+    cómo configurar los permisos utilizando las herramientas de gestión de archivos de tu panel de control de Hostinger.*/
 
-/*Éxito o fallo en el envío del formulario*/
-if($result==false){
-    header('Location: subida_error.php');
+    //de carpeta temporal a carpeta destino:
+    if(move_uploaded_file($archivo["tmp_name"], $ruta_destino.$nombre_archivo)==false){
+        header('Location: subida_error.php');
+    }
+
+    $sql="INSERT INTO `pedido_form1`(`Nombre`, `Email`, `Imagen`, `Formato`, `Cantidad`) VALUES ('$nombre', '$email', '$nombre_archivo', '$formato', $cantidad)";
+
+    $result=mysqli_query($conexion, $sql);
+
+    /*Éxito o fallo en el envío del formulario*/
+    if($result==false){
+        header('Location: subida_error.php');
+    }else{
+        header('Location: subida_exito.php');
+    }
 }else{
-    header('Location: subida_exito.php');
+    header('Location: subida_error.php');
 }
 
 //Cerrar la conexión con la BBDD:
