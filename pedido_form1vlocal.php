@@ -29,8 +29,7 @@ try {
     exit();
 }
 
-//obligación para rellenar todos los campos del formulario
-if (empty($nombre) && empty($email) && empty($archivo) && empty($formato) && empty($cantidad)) {
+
     //restricción de tamaño (2MB) y tipo de archivo
     if ($tamaño_archivo<=2097152 && ($tipo_archivo == "image/jpeg" || $tipo_archivo == "image/jpg" || $tipo_archivo == "image/png")) {
 
@@ -60,7 +59,5 @@ if (empty($nombre) && empty($email) && empty($archivo) && empty($formato) && emp
     } else {
         header('Location: subida_error.php');
     }
-} else {
-    header('Location: subida_error.php');
-}
+
 ?>
