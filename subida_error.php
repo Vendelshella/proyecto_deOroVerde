@@ -12,7 +12,7 @@
             <td><h2>Error al enviar el formulario</h2></td>
         </tr>
         <tr>
-            <td><p>Puede que el tamaño del archivo sea mayor a 2 MB o que el formato no sea .jpg .jpeg o .png</p></td>
+            <td><p>Puede que el tamaño del archivo sea mayor a 2 MB o que el formato no sea .jpg .jpeg o .png. Recuerda que todos los campos son obligatorios.</p></td>
         </tr>
         <tr>
             <td><p>Vuelvelo a intentar y si el error persiste, puedes ponerte en contacto directamente con la persona encargada de llevar a cabo tu pedido en info@deoroverde.szmblog.es</p></td>

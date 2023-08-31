@@ -40,18 +40,18 @@
                 <th colspan="2">Formulario para tarjetas con formato predefinido:</th>
                 <tr>
                     <td><label for="nombre">Nombre:</label></td>
-                    <td><input id="nombre" type="text" name="nombre"></td>
+                    <td><input id="nombre" type="text" name="nombre" required></td>
                 </tr>
                 <tr>
                     <td><label for="email">E-mail:</label></td>
-                    <td><input id="email" type="email" name="email"></td>
+                    <td><input id="email" type="email" name="email" required></td>
                 </tr>
                 <tr class="subir_imagen">
                     <td><label>Subir imagen:</label></td>
                     <td class="boton_archivo">
                         <div class="input_file">
                             <p>Seleccionar archivo</p>
-                            <input class="subir_archivo" type="file" id="subir_archivo" name="archivo">
+                            <input class="subir_archivo" type="file" id="subir_archivo" name="archivo" required>
                         </div>
                     </td>
                 </tr>
