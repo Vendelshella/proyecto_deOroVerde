@@ -86,6 +86,10 @@ textarea, #nombre, #email{
     .input_file{
         padding: 0% 2%;
     }
+    .table1, .table2{
+        border: white;
+        background-color: white;
+    }
     .table2 label{
         margin: 5%;
     }
