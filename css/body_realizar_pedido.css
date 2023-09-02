@@ -13,12 +13,14 @@ h1{
     margin: 0% 15%;
     text-align: center;
 }
+.fs1, .fs2{
+    border-color: rgb(186, 226, 107);
+    background: rgb(244, 244, 211);
+    margin: auto;
+}
 .table1, .table2{
     display: flex;
     justify-content: center;
-    margin: 5%;
-    border: solid 2px rgb(186, 226, 107);
-    background-color: rgb(244, 244, 211);
     padding: 5%;
 }
 th{
@@ -85,10 +87,6 @@ textarea, #nombre, #email{
     }
     .input_file{
         padding: 0% 2%;
-    }
-    .table1, .table2{
-        border: white;
-        background-color: white;
     }
     .table2 label{
         margin: 5%;

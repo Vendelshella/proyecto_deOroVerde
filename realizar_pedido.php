@@ -36,6 +36,7 @@
         <p>(Todos los campos son obligatorios.)</p>
         
         <form class="form1" action="pedido_form1v2.php" method="post" enctype="multipart/form-data">
+            <fieldset class="fs1">
             <table class="table1">
                 <th colspan="2">Formulario para tarjetas con formato predefinido:</th>
                 <tr>
@@ -83,10 +84,12 @@
                     <td colspan="2"><input class="boton_enviar" type="submit" value="Enviar"></td>
                 </tr>
             </table>
+            </fieldset>
         </form>
 
         <p>Si prefieres que tu tarjetas tenga un formato personalizado, mándanos un mensaje a través del siguiente formulario para darte un presupuesto ajustado a tus necesidades:</p>
         <form class="form2" action="pedido_form2.php" method="post">
+            <fieldset class="fs2">
             <table class="table2">
                 <th colspan="2">Formulario para tarjetas con formato personalizado:</th>
                 <tr>
@@ -104,6 +107,7 @@
                 <tr>
                     <td colspan="2"><input class="boton_enviar" type="submit" value="Enviar Mensaje"></td></tr>
             </table>
+            </fieldset>
         </form>
     </section>
     <footer class="contacto">
