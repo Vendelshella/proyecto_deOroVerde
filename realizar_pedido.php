@@ -101,8 +101,12 @@
                     <td><input id="email" type="email" name="email"></td>
                 </tr>
                 <tr>
+                    <td><label for="asunto">Asunto:</label></td>
+                    <td><input id="asunto" type="text" name="asunto"></td>
+                </tr>
+                <tr>
                     <td><label for="mensaje">Mensaje:</label></td>
-                    <td><textarea name="nombre" id="nombre" cols="60" rows="10"></textarea></td>
+                    <td><textarea name="mensaje" id="mensaje" cols="60" rows="10"></textarea></td>
                 </tr>
                 <tr>
                     <td colspan="2"><input class="boton_enviar" type="submit" value="Enviar Mensaje"></td></tr>
