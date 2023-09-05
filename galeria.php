@@ -57,6 +57,7 @@
         <div class="grid-item19"><img src="images/galeria_deOroVerde/19.jpg"></div>
         <div class="grid-item20"><img src="images/galeria_deOroVerde/20.jpg"></div>
     </div>
+    <div class="arriba"><a href="#logohead">Volver arriba</a></div>
     <footer class="contacto">
         <table>
             <th id="contacto" colspan="2"><h2>Contacto</h2></th>
