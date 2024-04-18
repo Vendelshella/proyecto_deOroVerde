@@ -102,20 +102,6 @@
     <footer>
         <div class="container">
             <table>
-                <th id="contacto" colspan="2"><h2>¿Trabajamos juntos?</h2></th>
-                <tr>
-                    <td><img src="images/mail.png"></td>
-                    <td>info@deoroverde.szmblog.es</td>
-                </tr>
-                <tr>
-                    <td><img src="images/telefono.png"></td>
-                    <td>616849345</td>
-                </tr>
-            </table>
-        </div>
-        
-        <div class="container">
-            <table>
                 <th id="contacto" colspan="2"><h2>Mis redes sociales:</h2></th>
                 <tr>
                     <td><img src="images/instagram.png"></td>
@@ -128,6 +114,20 @@
                 <tr>
                     <td><img src="images/facebook.png"></td>
                     <td><a href="#">@deoroverde87</a></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="container">
+            <table>
+                <th id="contacto" colspan="2"><h2>¿Trabajamos juntos?</h2></th>
+                <tr>
+                    <td><img src="images/mail.png"></td>
+                    <td>info@deoroverde.szmblog.es</td>
+                </tr>
+                <tr>
+                    <td><img src="images/telefono.png"></td>
+                    <td>616849345</td>
                 </tr>
             </table>
         </div>
