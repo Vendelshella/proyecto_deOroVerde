@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>deOroVerde</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" type="text/css" href="css/body_galeria.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
@@ -26,7 +29,7 @@
                     <li><a href="documents/Información deOroVerde.pdf">Catálogo</a></li>
                     <li><a href="realizar_pedido.php">Realizar pedido</a></li>
                     <li><a href="galeria.php">Galería</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="contacto.php">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -57,20 +60,60 @@
         <div class="grid-item19"><img src="images/galeria_deOroVerde/19.jpg"></div>
         <div class="grid-item20"><img src="images/galeria_deOroVerde/20.jpg"></div>
     </div>
+    
     <div class="arriba"><a href="#logohead">Volver arriba</a></div>
-    <footer class="contacto">
-        <table>
-            <th id="contacto" colspan="2"><h2>Contacto</h2></th>
-            <tr>
-                <td class="texto">E-mail</td>
-                <td>info@deoroverde.szmblog.es</td>
-            </tr>
-            <tr>
-                <td class="texto">Teléfono</td>
-                <td>616849345</td>
-            </tr>
-        </table>
-        <!--deOroVerde87*-->
-    </footer>
+    
+    <footer>
+        <div class="container">
+            <table>
+                <th id="contacto" colspan="2"><h2>¿Trabajamos juntos?</h2></th>
+                <tr>
+                    <td><img src="images/mail.png"></td>
+                    <td>info@deoroverde.szmblog.es</td>
+                </tr>
+                <tr>
+                    <td><img src="images/telefono.png"></td>
+                    <td>616849345</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="container">
+            <table>
+                <th id="contacto" colspan="2"><h2>Mis redes sociales:</h2></th>
+                <tr>
+                    <td><img src="images/instagram.png"></td>
+                    <td><a href="#">@deOroVerde</a></td>
+                </tr>
+                <tr>
+                    <td><img src="images/twitter.png"></td>
+                    <td><a href="#">@de_oro_verde</a></td>
+                </tr>
+                <tr>
+                    <td><img src="images/facebook.png"></td>
+                    <td><a href="#">@deoroverde87</a></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="container">
+            <table>
+                <th id="contacto" colspan="2"><h2>Legal</h2></th>
+                <tr>
+                    <td><img src="images/cookie.png"></td>
+                    <td><a href="#">Política de cookies (UE)</a></td>
+                </tr>
+                <tr>
+                    <td><img src="images/documento.png"></td>
+                    <td><a href="#">Aviso legal</a></td>
+                </tr>
+                <tr>
+                    <td><img src="images/documento.png"></td>
+                    <td><a href="#">Política de privacidad</a></td>
+                </tr>
+            </table>
+        </div>
+    </footer> 
+    <!--deOroVerde87*-->
 </body>
 </html>

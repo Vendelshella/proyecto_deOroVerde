@@ -17,7 +17,7 @@ header{
 }
 @media screen and (max-width: 650px){
     #logohead{
-        width: 25%;
+        width: 35%;
         height: 10%;
     }
     .divnav{
@@ -59,22 +59,25 @@ header{
         display: block;
     }
     .nav{
-        margin-top: 4%;
+        margin-top: 6%;
         position: absolute;
         right: 0;
         background-color: rgb(186, 226, 107);
-        padding: 0% 3%;
+        padding: 0% 10%;
     }
     nav ul{
         flex-direction: column;
     }
     nav ul li{
         width: 100%;
-        font-size: 70%;
-        margin: 5% 0%;
+        font-size: 120%;
+        margin: 10% 0%;
     }
     nav ul li:hover{
-        background-color: rgb(147, 173, 98);
+        background-color: rgb(117, 138, 79);
+    }
+    nav ul li a:hover {
+        color: white;
     }
     nav ul li a{
         margin: 50% 0%;
@@ -99,8 +102,10 @@ nav ul li{
     transition: 0.2s;
 }
 nav ul li:hover{
-    transform: scale(1.1);
-    background-color: rgb(147, 173, 98);
+    background-color: rgb(117, 138, 79);
+}
+nav ul li a:hover {
+    color: white;
 }
 nav ul li a{
     text-decoration: none;
